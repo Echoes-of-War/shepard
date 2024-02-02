@@ -1,6 +1,6 @@
 module:
   # module to unpack 
-  from: loi-alpha-my-work.mod
+  from: ../../module/my-work.mod
   # desired file to pack module to
   # to: server/modules/loi-alpha-test.mod
   to: server/modules/loi-alpha-test.mod
@@ -9,5 +9,5 @@ module:
 os: win
 
 # do not change these
-root: src
-temp: src/temporary
+root: ../../module/src
+temp: ../../module/src/temporary

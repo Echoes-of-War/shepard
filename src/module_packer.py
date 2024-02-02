@@ -12,6 +12,8 @@ from pathlib import Path
 #     python module_packer.py pack
 #     python module_packer.py unpack
 
+libDir = "../lib"
+
 def main():
     command = str(sys.argv[1])
 
@@ -42,9 +44,9 @@ def main():
 
 class ModulePacker:
     def __init__(self, os, targetDir, tempDir):
-        self.nwn_erf = join('lib', os, 'nwn_erf')
-        self.nwn_gff = join('lib', os, 'nwn_gff')
-        self.nwnsc = join('lib', os, 'nwnsc')
+        self.nwn_erf = join(libDir, os, 'nwn_erf')
+        self.nwn_gff = join(libDir, os, 'nwn_gff')
+        self.nwnsc = join(libDir, os, 'nwnsc')
         self.targetDir = targetDir
         self.tempDir = tempDir
 
@@ -182,7 +184,7 @@ class Compiler:
 
     def compile(self, file):
         outfile = os.path.splitext(file)[0] + '.ncs'
-        p = subprocess.Popen([self.nwnsc, '-qw', '-n', 'lib', '-r', join(self.tempDir, outfile), '-i', self.srcDir, join(self.srcDir, file)])
+        p = subprocess.Popen([self.nwnsc, '-qw', '-n', libDir, '-r', join(self.tempDir, outfile), '-i', self.srcDir, join(self.srcDir, file)])
         p.wait()
 
 
