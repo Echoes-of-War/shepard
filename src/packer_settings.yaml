@@ -5,6 +5,12 @@ module:
   # to: server/modules/loi-alpha-test.mod
   to: server/modules/loi-alpha-test.mod
 
+hak:
+  # directory of .hak files to unpack
+  from: ../../hak/raw
+  # directory of exploded assets
+  to: ../../hak/src
+
 # what operating system (win|linux|macos)
 os: win
 
