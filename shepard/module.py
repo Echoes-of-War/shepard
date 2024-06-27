@@ -36,7 +36,7 @@ class ModulePacker:
             ext = os.path.splitext(f)[1]
             if ext == '.nss':
                 scriptFiles.append(f)
-            elif ext != '.ncs':            
+            elif ext != '.ncs':
                 gffFiles.append(f)
 
         # Greedily try to use all of the cores except for one
