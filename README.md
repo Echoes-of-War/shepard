@@ -11,7 +11,8 @@ Python 3
 
 # usage
 
-``` shepard --help ```
+``` shepard mod unpack --src myModule.mod --dest someDirectory ```
+``` shepard mod pack --dest myModule.mod --src someDirectory ```
 
 # dev testing
 windows
