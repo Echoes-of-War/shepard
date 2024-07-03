@@ -6,10 +6,16 @@ from os.path import join
 import shepard.converter as converter
 import shepard.compiler as compiler
 import shepard.copier as copier
-
+import sys
 
 class ModulePacker:
-    def __init__(self, os, targetDir, tempDir, libDir):
+    def __init__(self, targetDir, tempDir, libDir):
+        os = 'linux'
+        if sys.platform.startswith('win'):
+            os = 'win'
+        elif sys.platform.startswith('darwin'):
+            os = 'macos'
+
         self.nwn_erf = join(libDir, os, 'nwn_erf')
         self.nwn_gff = join(libDir, os, 'nwn_gff')
         self.nwnsc = join(libDir, os, 'nwnsc')
