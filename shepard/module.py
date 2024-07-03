@@ -25,7 +25,7 @@ class ModulePacker:
 
         print(f'Unpacking {absModule}')
         unpackTic = time.perf_counter()
-        p = subprocess.Popen([self.nwn_erf, '-f', absModule, '-x'], cwd=self.tempDir)
+        p = subprocess.Popen([self.nwn_erf, '-f', absModule, '-x'], cwd=self.tempDir, shell=True)
         p.wait()
         unpackToc = time.perf_counter()
         print(f'Unpacked module to {self.tempDir} in {unpackToc - unpackTic:0.1f}s')
@@ -104,7 +104,7 @@ class ModulePacker:
 
         print(f'Packing {absModule}')
         packTic = time.perf_counter()
-        p = subprocess.Popen([self.nwn_erf, '-e', 'MOD', '-f', modulePath, '-c', self.tempDir])
+        p = subprocess.Popen([self.nwn_erf, '-e', 'MOD', '-f', modulePath, '-c', self.tempDir], shell=True)
         p.wait()
         packToc = time.perf_counter()
         print(f'Packed module to {absModule} in {packToc - packTic:0.1f}s')
